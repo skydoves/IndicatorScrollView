@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-:bullettrain_side: Reacts dynamically with an indicator when the scroll is changed.<br>
+🧀 Reacts dynamically with an indicator when the scroll is changed.<br>
 </p>
 
 <p align="center">
@@ -15,6 +15,7 @@
 </p>
 
 ## Including in your project
+[![JitPack](https://jitpack.io/v/skydoves/IndicatorScrollView.svg)](https://jitpack.io/#skydoves/IndicatorScrollView)
 Add below codes to your **root** `build.gradle` file (not your module build.gradle file).
 ```gradle
 allprojects {
