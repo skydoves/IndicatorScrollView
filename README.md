@@ -98,6 +98,16 @@ It extends `NestedScrollView`. So it must have a ViewGroup child like what `Line
 IndicatorView is an indicator view for reacting to `IndicatorScrollView` when the scroll is changed.</br>
 It should be used in `IndicatorScrollView`.
 
+#### Create using builder class
+We can create an instance of the `IndicatorView` using `IndicatorView.Builder` class.
+```kotlin
+val indicatorView = IndicatorView.Builder(this)
+  .setIndicatorItemPadding(16)
+  .setExpandingRatio(0.2f)
+  .setExpandingLastItemRatio(1.0f)
+  .build()
+```
+
 ### Binding
 We should bind an `IndicatorView` to `IndicatorScrollView` like bellow.
 ```kotlin
