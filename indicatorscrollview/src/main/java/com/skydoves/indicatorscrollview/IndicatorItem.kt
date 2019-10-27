@@ -39,20 +39,35 @@ class IndicatorItem(val target: View) {
   class Builder(private val target: View) {
     private val indicatorItem = IndicatorItem(target)
 
+    /** sets the background color of the indicator item using value. */
     fun setItemColor(value: Int) = apply { this.indicatorItem.color = value }
+
+    /** sets the background color of the item using resource. */
     fun setItemColorResource(@ColorRes value: Int) = apply {
       this.indicatorItem.color = ContextCompat.getColor(target.context, value)
     }
 
+    /** sets the icon of the indicator item using drawable. */
     fun setItemIcon(value: Drawable?) = apply { this.indicatorItem.icon = value }
+
+    /** sets the icon of the indicator item using resource. */
     fun setItemIconResource(@DrawableRes value: Int) = apply {
       this.indicatorItem.icon = ContextCompat.getDrawable(target.context, value)
     }
 
+    /** setItemIconTopPadding(12)  */
     fun setItemIconTopPadding(value: Int) = apply { this.indicatorItem.iconTopPadding = value }
+
+    /** sets the corner radius of the indicator item. */
     fun setItemCornerRadius(value: Float) = apply { this.indicatorItem.cornerRadius = value }
+
+    /** sets the expanding and collapsing duration. */
     fun setItemDuration(value: Long) = apply { this.indicatorItem.duration = value }
+
+    /** customizes the fully expanded height size. */
     fun setExpandedSize(value: Int) = apply { this.indicatorItem.expandedSize = value }
+
+    /** returns an instance of the [IndicatorView]. */
     fun build() = indicatorItem
   }
 }

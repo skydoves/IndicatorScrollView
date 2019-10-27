@@ -111,7 +111,7 @@ class IndicatorView : FrameLayout, OnScrollChangedListener {
         var height = this.indicatorItemsList[index].expandedSize
         if (index == this.indicatorItemsList.size - 1 && height == -1) height =
           (this.height - this.indicatorItemViewList[index].y - this.indicatorItemPadding).toInt()
-        if (height == -1) {
+        else if (height == -1) {
           height =
             (this.indicatorItemViewList[index + 1].y - this.indicatorItemViewList[index].y - this.indicatorItemPadding).toInt()
         }
