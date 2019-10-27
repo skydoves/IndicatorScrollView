@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="IndicatorView">
+    <attr name="indicator_itemPadding" format="dimension" />
+    <attr name="indicator_expandingRatio" format="float" />
+    <attr name="indicator_expandingLastItemRatio" format="float" />
+  </declare-styleable>
+</resources>

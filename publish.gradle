@@ -1,0 +1,13 @@
+apply plugin: 'com.novoda.bintray-release'
+apply from: '../dependencies.gradle'
+
+publish {
+    userOrg = 'devmagician'
+    groupId = 'com.github.skydoves'
+    artifactId = 'indicatorscrollview'
+    publishVersion = versions.versionName
+    desc = 'IndicatorScrollView and collapses a layout\'s horizontal and vertical sequentially.'
+    website = 'https://github.com/skydoves/IndicatorScrollView'
+    issueTracker = "${website}/issues"
+    repository = "${website}.git"
+}
