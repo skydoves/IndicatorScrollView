@@ -16,6 +16,7 @@
 </p>
 
 ## Including in your project
+[![Download](https://api.bintray.com/packages/devmagician/maven/indicatorscrollview/images/download.svg) ](https://bintray.com/devmagician/maven/indicatorscrollview/_latestVersion)
 [![JitPack](https://jitpack.io/v/skydoves/IndicatorScrollView.svg)](https://jitpack.io/#skydoves/IndicatorScrollView) <br>
 Add below codes to your **root** `build.gradle` file (not your module build.gradle file).
 ```gradle
