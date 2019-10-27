@@ -44,7 +44,7 @@ class IndicatorItem(val target: View) {
       this.indicatorItem.color = ContextCompat.getColor(target.context, value)
     }
 
-    fun setItemIcon(value: Drawable) = apply { this.indicatorItem.icon = value }
+    fun setItemIcon(value: Drawable?) = apply { this.indicatorItem.icon = value }
     fun setItemIconResource(@DrawableRes value: Int) = apply {
       this.indicatorItem.icon = ContextCompat.getDrawable(target.context, value)
     }
