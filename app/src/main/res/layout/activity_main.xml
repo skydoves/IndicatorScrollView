@@ -17,7 +17,10 @@
       android:layout_height="match_parent"
       android:background="@color/background800"
       android:paddingLeft="6dp"
-      android:paddingRight="6dp" />
+      android:paddingRight="6dp"
+      app:indicator_expandingLastItemRatio="1.0"
+      app:indicator_expandingRatio="0.2"
+      app:indicator_itemPadding="6dp" />
 
     <LinearLayout
       android:layout_width="match_parent"
@@ -45,9 +48,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginEnd="15dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:orientation="vertical">
 
         <TextView
@@ -73,9 +76,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginEnd="15dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:orientation="vertical">
 
         <TextView
@@ -101,9 +104,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginEnd="15dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:orientation="vertical">
 
         <TextView
@@ -129,9 +132,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginEnd="15dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
         android:orientation="vertical">
 
         <TextView

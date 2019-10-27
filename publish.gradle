@@ -6,7 +6,7 @@ publish {
     groupId = 'com.github.skydoves'
     artifactId = 'indicatorscrollview'
     publishVersion = versions.versionName
-    desc = 'IndicatorScrollView and collapses a layout\'s horizontal and vertical sequentially.'
+    desc = 'Reacts dynamically with an indicator when the scroll is changed.'
     website = 'https://github.com/skydoves/IndicatorScrollView'
     issueTracker = "${website}/issues"
     repository = "${website}.git"
