@@ -156,6 +156,18 @@ indicatorView.addIndicatorItem(myIndicatorItem)
 indicatorView + myIndicatorItem
 ```
 
+### IndicatorAnimation
+We can customize the expanding and collapsing animation.<br>
+```kotlin
+IndicatorAnimation.NORMAL
+IndicatorAnimation.Accelerator
+IndicatorAnimation.Bounce
+```
+
+NORMAL | Accelerator | Bounce
+| :---------------: | :---------------: | :---------------: |
+| <img src="https://user-images.githubusercontent.com/24237865/67663681-69b88380-f9a9-11e9-813f-db695234ee74.gif" align="center" width="100%"/> | <img src="https://user-images.githubusercontent.com/24237865/67663683-69b88380-f9a9-11e9-9490-8f8d87a82cd0.gif" align="center" width="100%"/> | <img src="https://user-images.githubusercontent.com/24237865/67663684-69b88380-f9a9-11e9-9f0e-97254f44b41d.gif" align="center" width="100%"/>
+
 ## IndicatorView Attributes
 Attributes | Type | Default | Description
 --- | --- | --- | ---
