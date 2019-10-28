@@ -18,7 +18,7 @@
       android:background="@color/background800"
       android:paddingLeft="6dp"
       android:paddingRight="6dp"
-      app:indicator_expandingLastItemRatio="1.0"
+      app:indicator_expandingAllItemRatio="1.0"
       app:indicator_expandingRatio="0.2"
       app:indicator_itemPadding="6dp" />
 

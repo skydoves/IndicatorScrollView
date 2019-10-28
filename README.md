@@ -64,7 +64,7 @@ Here is a basic example of implementing `IndicatorScrollView` and `indicatorView
       android:paddingLeft="6dp"
       android:paddingRight="6dp"
       app:indicator_expandingRatio="0.2" // expands when an indicator item reaches the display's height ratio.
-      app:indicator_expandingLastItemRatio="1.0" // collapses when an item reaches the scroll's height ratio.
+      app:indicator_expandingAllItemRatio="0.9" // expands all items when reaches the display's height raito.
       app:indicator_itemPadding="6dp" // padding size between indicator items.
     />
       
@@ -105,7 +105,7 @@ We can create an instance of the `IndicatorView` using `IndicatorView.Builder` c
 val indicatorView = IndicatorView.Builder(this)
   .setIndicatorItemPadding(16)
   .setExpandingRatio(0.2f)
-  .setExpandingLastItemRatio(1.0f)
+  .setExpandingAllItemRatio(1.0f)
   .build()
 ```
 
@@ -159,7 +159,7 @@ indicatorView + myIndicatorItem
 Attributes | Type | Default | Description
 --- | --- | --- | ---
 expandingRatio | Float | 0.2 | expands when an indicator item reaches the display's height ratio.
-expandingLastItemRatio | Float | 1.0 | collapses when an item reaches the scroll's height ratio.
+expandingAllItemRatio | Float | 0.9 | collapses when an item reaches the scroll's height ratio.
 itemPadding | Dimension | 6dp | padding size between indicator items.
 
 ## Find this library useful? :heart:

@@ -3,6 +3,6 @@
   <declare-styleable name="IndicatorView">
     <attr name="indicator_itemPadding" format="dimension" />
     <attr name="indicator_expandingRatio" format="float" />
-    <attr name="indicator_expandingLastItemRatio" format="float" />
+    <attr name="indicator_expandingAllItemRatio" format="float" />
   </declare-styleable>
 </resources>

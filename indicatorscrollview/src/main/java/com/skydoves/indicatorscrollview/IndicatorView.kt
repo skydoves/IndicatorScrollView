@@ -32,7 +32,7 @@ class IndicatorView : FrameLayout, OnScrollChangedListener {
   @FloatRange(from = 0.0, to = 1.0)
   var expandingRatio = 0.2f
   @FloatRange(from = 0.0, to = 1.0)
-  var expandingLastItemRatio = 0.9f
+  var expandingAllItemRatio = 0.9f
 
   constructor(context: Context) : super(context)
 
@@ -69,8 +69,8 @@ class IndicatorView : FrameLayout, OnScrollChangedListener {
       a.getDimensionPixelSize(R.styleable.IndicatorView_indicator_itemPadding, this.indicatorItemPadding)
     this.expandingRatio =
       a.getFloat(R.styleable.IndicatorView_indicator_expandingRatio, this.expandingRatio)
-    this.expandingLastItemRatio =
-      a.getFloat(R.styleable.IndicatorView_indicator_expandingLastItemRatio, this.expandingLastItemRatio)
+    this.expandingAllItemRatio =
+      a.getFloat(R.styleable.IndicatorView_indicator_expandingAllItemRatio, this.expandingAllItemRatio)
   }
 
   override fun onFinishInflate() {
@@ -126,7 +126,7 @@ class IndicatorView : FrameLayout, OnScrollChangedListener {
         }
         if (this.indicatorItemViewList[index].y - y < context.displaySize().y * this.expandingRatio) {
           this.indicatorItemViewList[index].expand(getStandardSize(), height)
-        } else if (((measuredScrollViewHeight * expandingLastItemRatio).toInt() > y)) {
+        } else if (((measuredScrollViewHeight * expandingAllItemRatio).toInt() > y)) {
           this.indicatorItemViewList[index].collapse(getStandardSize(), height)
         } else {
           this.indicatorItemViewList[index].expand(getStandardSize(), height)
@@ -142,7 +142,7 @@ class IndicatorView : FrameLayout, OnScrollChangedListener {
 
     fun setIndicatorItemPadding(value: Int) = apply { this.indicatorView.indicatorItemPadding = value }
     fun setExpandingRatio(@FloatRange(from = 0.0, to = 1.0) value: Float) = apply { this.indicatorView.expandingRatio = value }
-    fun setExpandingLastItemRatio(@FloatRange(from = 0.0, to = 1.0) value: Float) = apply { this.indicatorView.expandingLastItemRatio = value }
+    fun setExpandingAllItemRatio(@FloatRange(from = 0.0, to = 1.0) value: Float) = apply { this.indicatorView.expandingAllItemRatio = value }
     fun build() = this.indicatorView
   }
 }
