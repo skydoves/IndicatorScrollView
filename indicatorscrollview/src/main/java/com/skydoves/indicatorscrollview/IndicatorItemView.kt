@@ -64,20 +64,20 @@ internal class IndicatorItemView(
       if (!this.isExpanded && !isExpanding) {
         this.isExpanded = true
         this.isExpanding = true
-        val animator = ValueAnimator.ofFloat(0f, 1f)
-        animator.duration = item.duration
-        animator.addUpdateListener {
-          val value = it.animatedValue as Float
-          this.applyLayoutParams {
-            var target = minHeight + (to * value).toInt()
-            if (target >= to) target = to
-            height = target
+        ValueAnimator.ofFloat(0f, 1f).apply {
+          duration = item.duration
+          applyInterpolator(item.indicatorAnimation)
+          doAfterFinishLift { isExpanding = false }
+          addUpdateListener {
+            val value = it.animatedValue as Float
+            applyLayoutParams {
+              var target = minHeight + (to * value).toInt()
+              if (target >= to) target = to
+              height = target
+            }
           }
-          if (value == 1f) {
-            this.isExpanding = false
-          }
+          start()
         }
-        animator.start()
       }
     }
   }
@@ -87,20 +87,20 @@ internal class IndicatorItemView(
       if (this.isExpanded && !isExpanding) {
         this.isExpanded = false
         this.isExpanding = true
-        val animator = ValueAnimator.ofFloat(1f, 0f)
-        animator.duration = item.duration
-        animator.addUpdateListener {
-          val value = it.animatedValue as Float
-          this.applyLayoutParams {
-            var target = (from * value).toInt()
-            if (target <= minHeight) target = minHeight
-            height = target
+        ValueAnimator.ofFloat(1f, 0f).apply {
+          duration = item.duration
+          applyInterpolator(item.indicatorAnimation)
+          doAfterFinishLift { isExpanding = false }
+          addUpdateListener {
+            val value = it.animatedValue as Float
+            applyLayoutParams {
+              var target = (from * value).toInt()
+              if (target <= minHeight) target = minHeight
+              height = target
+            }
           }
-          if (value == 0f) {
-            this.isExpanding = false
-          }
+          start()
         }
-        animator.start()
       }
     }
   }

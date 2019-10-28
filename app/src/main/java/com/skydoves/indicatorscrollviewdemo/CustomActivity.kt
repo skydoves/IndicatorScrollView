@@ -18,6 +18,7 @@ package com.skydoves.indicatorscrollviewdemo
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.skydoves.indicatorscrollview.IndicatorAnimation
 import com.skydoves.indicatorscrollview.IndicatorItem
 import kotlinx.android.synthetic.main.activity_custom.*
 
@@ -30,21 +31,27 @@ class CustomActivity : AppCompatActivity() {
     indicatorScrollView.bindIndicatorView(indicatorView)
 
     indicatorView + IndicatorItem.Builder(section1).setItemColorResource(
-      R.color.colorPrimary).setItemIconResource(R.drawable.ic_heart).setItemCornerRadius(30f).build()
+      R.color.colorPrimary).setItemIconResource(R.drawable.ic_heart)
+      .setIndicatorAnimation(IndicatorAnimation.BOUNCE).setItemCornerRadius(30f).build()
 
     indicatorView + IndicatorItem.Builder(section2).setItemColorResource(
-      R.color.md_orange_100).setItemIconResource(R.drawable.ic_home).setItemCornerRadius(30f).build()
+      R.color.md_orange_100).setItemIconResource(R.drawable.ic_home)
+      .setIndicatorAnimation(IndicatorAnimation.BOUNCE).setItemCornerRadius(30f).build()
 
     indicatorView + IndicatorItem.Builder(section3).setItemColorResource(
-      R.color.md_yellow_200).setItemIconResource(R.drawable.ic_assignment).setItemCornerRadius(30f).build()
+      R.color.md_yellow_200).setItemIconResource(R.drawable.ic_assignment)
+      .setIndicatorAnimation(IndicatorAnimation.BOUNCE).setItemCornerRadius(30f).build()
 
     indicatorView + IndicatorItem.Builder(section4).setItemColorResource(
-      R.color.md_green_200).setItemIconResource(R.drawable.ic_bookmark).setItemCornerRadius(30f).build()
+      R.color.md_green_200).setItemIconResource(R.drawable.ic_bookmark)
+      .setIndicatorAnimation(IndicatorAnimation.BOUNCE).setItemCornerRadius(30f).build()
 
     indicatorView + IndicatorItem.Builder(section5).setItemColorResource(
-      R.color.md_blue_200).setItemIconResource(R.drawable.ic_date).setItemCornerRadius(30f).build()
+      R.color.md_blue_200).setItemIconResource(R.drawable.ic_date)
+      .setIndicatorAnimation(IndicatorAnimation.BOUNCE).setItemCornerRadius(30f).build()
 
     indicatorView + IndicatorItem.Builder(section6).setItemColorResource(
-      R.color.md_purple_100).setItemIconResource(R.drawable.ic_wifi).setItemCornerRadius(30f).build()
+      R.color.md_purple_100).setItemIconResource(R.drawable.ic_wifi)
+      .setIndicatorAnimation(IndicatorAnimation.BOUNCE).setItemCornerRadius(30f).build()
   }
 }

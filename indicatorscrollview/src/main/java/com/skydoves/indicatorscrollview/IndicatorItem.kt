@@ -33,6 +33,7 @@ class IndicatorItem(val target: View) {
   var cornerRadius: Float = 120f
   var duration: Long = 1000L
   var expandedSize: Int = -1
+  var indicatorAnimation: IndicatorAnimation = IndicatorAnimation.NORMAL
 
   /** Builder class for creating an instance of [IndicatorItem]. */
   @IndicatorItemDsl
@@ -66,6 +67,9 @@ class IndicatorItem(val target: View) {
 
     /** customizes the fully expanded height size. */
     fun setExpandedSize(value: Int) = apply { this.indicatorItem.expandedSize = value }
+
+    /** customizes the indicator animation when expanding and collapsing. */
+    fun setIndicatorAnimation(value: IndicatorAnimation) = apply { this.indicatorItem.indicatorAnimation = value }
 
     /** returns an instance of the [IndicatorView]. */
     fun build() = indicatorItem
