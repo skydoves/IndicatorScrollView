@@ -32,7 +32,7 @@ class IndicatorView : FrameLayout, OnScrollChangedListener {
   @FloatRange(from = 0.0, to = 1.0)
   var expandingRatio = 0.2f
   @FloatRange(from = 0.0, to = 1.0)
-  var expandingLastItemRatio = 1f
+  var expandingLastItemRatio = 0.9f
 
   constructor(context: Context) : super(context)
 
@@ -92,6 +92,11 @@ class IndicatorView : FrameLayout, OnScrollChangedListener {
     }
   }
 
+  /** add a list of [IndicatorItem] for composing [IndicatorView]. */
+  fun addIndicatorItemList(indicatorItemList: List<IndicatorItem>) {
+    indicatorItemList.forEach(::addIndicatorItem)
+  }
+
   private fun addItem(
     indicatorItem: IndicatorItem,
     indicatorItemView: IndicatorItemView
@@ -105,13 +110,17 @@ class IndicatorView : FrameLayout, OnScrollChangedListener {
 
   operator fun plus(indicatorItem: IndicatorItem) = addIndicatorItem(indicatorItem)
 
+  operator fun plus(indicatorItemList: List<IndicatorItem>) = addIndicatorItemList(indicatorItemList)
+
   override fun onChanged(x: Int, y: Int, measuredScrollViewHeight: Int) {
+    if (y == 0 && expandingRatio != 0f) return
     post {
       for (index in 0 until this.indicatorItemsList.size) {
         var height = this.indicatorItemsList[index].expandedSize
-        if (index == this.indicatorItemsList.size - 1 && height == -1) height =
-          (this.height - this.indicatorItemViewList[index].y - this.indicatorItemPadding).toInt()
-        else if (height == -1) {
+        if (index == this.indicatorItemsList.size - 1 && height == -1) {
+          height =
+            (this.height - this.indicatorItemViewList[index].y - this.indicatorItemPadding).toInt()
+        } else if (height == -1) {
           height =
             (this.indicatorItemViewList[index + 1].y - this.indicatorItemViewList[index].y - this.indicatorItemPadding).toInt()
         }
@@ -119,13 +128,9 @@ class IndicatorView : FrameLayout, OnScrollChangedListener {
           this.indicatorItemViewList[index].expand(getStandardSize(), height)
         } else if (((measuredScrollViewHeight * expandingLastItemRatio).toInt() > y)) {
           this.indicatorItemViewList[index].collapse(getStandardSize(), height)
+        } else {
+          this.indicatorItemViewList[index].expand(getStandardSize(), height)
         }
-      }
-      if (measuredScrollViewHeight * expandingLastItemRatio <= y.toFloat()) {
-        val theLastItem = this.indicatorItemViewList[indicatorItemViewList.size - 1]
-        var height = this.indicatorItemsList[indicatorItemsList.size - 1].expandedSize
-        if (height == -1) height = (this.height - theLastItem.y - this.indicatorItemPadding).toInt()
-        this.indicatorItemViewList[indicatorItemViewList.size - 1].expand(getStandardSize(), height)
       }
     }
   }

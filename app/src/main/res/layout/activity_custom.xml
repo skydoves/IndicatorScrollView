@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.skydoves.indicatorscrollview.IndicatorScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/indicatorScrollView"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/background">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.skydoves.indicatorscrollview.IndicatorView
+      android:id="@+id/indicatorView"
+      android:layout_width="50dp"
+      android:layout_height="match_parent"
+      android:background="@color/background800"
+      android:paddingLeft="6dp"
+      android:paddingRight="6dp"
+      app:indicator_expandingLastItemRatio="1.0"
+      app:indicator_expandingRatio="0.2"
+      app:indicator_itemPadding="6dp" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      android:paddingBottom="40dp">
+
+      <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="6dp">
+
+        <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:scaleType="fitXY"
+          android:src="@drawable/thelittleprince" />
+      </androidx.cardview.widget.CardView>
+
+      <LinearLayout
+        android:id="@+id/section1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="IndicatorScrollView"
+          android:textColor="@color/white_93"
+          android:textSize="21sp"
+          android:textStyle="bold" />
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="6dp"
+          android:text="@string/lesson5"
+          android:textColor="@color/white_70"
+          android:textStyle="bold" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/section2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Remember to look up at the starts"
+          android:textColor="@color/white_93"
+          android:textSize="21sp"
+          android:textStyle="bold" />
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="6dp"
+          android:text="@string/lesson6"
+          android:textColor="@color/white_70"
+          android:textStyle="bold" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/section3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="So then the seventh planet was the Earth."
+          android:textColor="@color/white_93"
+          android:textSize="21sp"
+          android:textStyle="bold" />
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="6dp"
+          android:text="@string/lesson7"
+          android:textColor="@color/white_70"
+          android:textStyle="bold" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/section4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="And now six years have already.."
+          android:textColor="@color/white_93"
+          android:textSize="21sp"
+          android:textStyle="bold" />
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="6dp"
+          android:text="@string/lesson5"
+          android:textColor="@color/white_70"
+          android:textStyle="bold" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/section5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Remember to look up at the starts"
+          android:textColor="@color/white_93"
+          android:textSize="21sp"
+          android:textStyle="bold" />
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="6dp"
+          android:text="@string/lesson6"
+          android:textColor="@color/white_70"
+          android:textStyle="bold" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/section6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="So then the seventh planet was the Earth."
+          android:textColor="@color/white_93"
+          android:textSize="21sp"
+          android:textStyle="bold" />
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="6dp"
+          android:text="@string/lesson7"
+          android:textColor="@color/white_70"
+          android:textStyle="bold" />
+      </LinearLayout>
+    </LinearLayout>
+  </LinearLayout>
+</com.skydoves.indicatorscrollview.IndicatorScrollView>
