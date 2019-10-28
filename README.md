@@ -13,6 +13,7 @@
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/24237865/67630703-46b9a100-f8cf-11e9-8731-d16d15794f44.gif" width="32%"/>
+<img src="https://user-images.githubusercontent.com/24237865/67662841-8f448d80-f9a7-11e9-96ad-e66018c5479e.gif" width="32%"/>
 </p>
 
 ## Including in your project
@@ -154,6 +155,18 @@ indicatorView.addIndicatorItem(myIndicatorItem)
 // or we can use plus operator.
 indicatorView + myIndicatorItem
 ```
+
+### IndicatorAnimation
+We can customize the expanding and collapsing animation.<br>
+```kotlin
+IndicatorAnimation.NORMAL
+IndicatorAnimation.Accelerator
+IndicatorAnimation.Bounce
+```
+
+NORMAL | Accelerator | Bounce
+| :---------------: | :---------------: | :---------------: |
+| <img src="https://user-images.githubusercontent.com/24237865/67663681-69b88380-f9a9-11e9-813f-db695234ee74.gif" align="center" width="100%"/> | <img src="https://user-images.githubusercontent.com/24237865/67663683-69b88380-f9a9-11e9-9490-8f8d87a82cd0.gif" align="center" width="100%"/> | <img src="https://user-images.githubusercontent.com/24237865/67663684-69b88380-f9a9-11e9-9f0e-97254f44b41d.gif" align="center" width="100%"/>
 
 ## IndicatorView Attributes
 Attributes | Type | Default | Description
