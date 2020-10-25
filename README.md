@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-🧀 Reacts dynamically with an indicator when the scroll is changed.<br>
+🧀 A dynamic way that animates indicators according to positions of a scroll view.<br>
 </p>
 
 <p align="center">
