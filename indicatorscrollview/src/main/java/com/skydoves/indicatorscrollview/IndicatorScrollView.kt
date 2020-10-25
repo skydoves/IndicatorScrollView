@@ -54,12 +54,16 @@ class IndicatorScrollView : NestedScrollView, NestedScrollView.OnScrollChangeLis
     oldScrollX: Int,
     oldScrollY: Int
   ) {
-    this.onUserScrollChangeListener?.onScrollChange(nestedScrollView, scrollX, scrollY, oldScrollX,
-        oldScrollY)
+    this.onUserScrollChangeListener?.onScrollChange(
+      nestedScrollView, scrollX, scrollY, oldScrollX,
+      oldScrollY
+    )
     nestedScrollView?.let {
       if (it.childCount > 0) {
-        this.onScrollChangedListener?.onChanged(scrollX, scrollY,
-            abs(it.measuredHeight - it.getChildAt(0).measuredHeight))
+        this.onScrollChangedListener?.onChanged(
+          scrollX, scrollY,
+          abs(it.measuredHeight - it.getChildAt(0).measuredHeight)
+        )
       }
     }
   }

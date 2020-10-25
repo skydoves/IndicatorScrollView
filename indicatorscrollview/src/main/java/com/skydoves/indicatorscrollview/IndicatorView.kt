@@ -40,8 +40,10 @@ class IndicatorView : FrameLayout, OnScrollChangedListener {
     getAttrs(attributeSet)
   }
 
-  constructor(context: Context, attributeSet: AttributeSet, defStyle: Int) : super(context,
-    attributeSet, defStyle) {
+  constructor(context: Context, attributeSet: AttributeSet, defStyle: Int) : super(
+    context,
+    attributeSet, defStyle
+  ) {
     getAttrs(attributeSet, defStyle)
   }
 

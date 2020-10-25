@@ -30,15 +30,19 @@ class MainActivity : AppCompatActivity() {
     indicatorScrollView.bindIndicatorView(indicatorView)
 
     indicatorView + IndicatorItem.Builder(section1).setItemColorResource(
-      R.color.colorPrimary).setItemIconResource(R.drawable.ic_heart).build()
+      R.color.colorPrimary
+    ).setItemIconResource(R.drawable.ic_heart).build()
 
     indicatorView + IndicatorItem.Builder(section2).setItemColorResource(
-      R.color.md_yellow_200).setItemIconResource(R.drawable.ic_assignment).build()
+      R.color.md_yellow_200
+    ).setItemIconResource(R.drawable.ic_assignment).build()
 
     indicatorView + IndicatorItem.Builder(section3).setItemColorResource(
-      R.color.md_green_200).setItemIconResource(R.drawable.ic_bookmark).build()
+      R.color.md_green_200
+    ).setItemIconResource(R.drawable.ic_bookmark).build()
 
     indicatorView + IndicatorItem.Builder(section4).setItemColorResource(
-      R.color.md_blue_200).setItemIconResource(R.drawable.ic_date).build()
+      R.color.md_blue_200
+    ).setItemIconResource(R.drawable.ic_date).build()
   }
 }
