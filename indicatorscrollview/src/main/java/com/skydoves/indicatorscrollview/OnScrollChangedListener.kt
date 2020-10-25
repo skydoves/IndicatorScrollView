@@ -17,7 +17,8 @@
 package com.skydoves.indicatorscrollview
 
 /** Interface definition for a callback to be invoked when a [OnScrollChangedListener] is changed. */
-internal interface OnScrollChangedListener {
+internal fun interface OnScrollChangedListener {
+
   /** Invoked when the [OnScrollChangedListener] is changed. */
   fun onChanged(x: Int, y: Int, measuredScrollViewHeight: Int)
 }

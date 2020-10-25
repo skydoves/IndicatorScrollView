@@ -19,8 +19,10 @@ package com.skydoves.indicatorscrollview
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.view.View
+import androidx.annotation.ColorInt
 import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
+import androidx.annotation.Px
 import androidx.core.content.ContextCompat
 
 /** IndicatorItem is an item data for composing the [IndicatorView]. */
@@ -41,7 +43,7 @@ class IndicatorItem(val target: View) {
     private val indicatorItem = IndicatorItem(target)
 
     /** sets the background color of the indicator item using value. */
-    fun setItemColor(value: Int) = apply { this.indicatorItem.color = value }
+    fun setItemColor(@ColorInt value: Int) = apply { this.indicatorItem.color = value }
 
     /** sets the background color of the item using resource. */
     fun setItemColorResource(@ColorRes value: Int) = apply {
@@ -57,16 +59,16 @@ class IndicatorItem(val target: View) {
     }
 
     /** setItemIconTopPadding(12)  */
-    fun setItemIconTopPadding(value: Int) = apply { this.indicatorItem.iconTopPadding = value }
+    fun setItemIconTopPadding(@Px value: Int) = apply { this.indicatorItem.iconTopPadding = value }
 
     /** sets the corner radius of the indicator item. */
-    fun setItemCornerRadius(value: Float) = apply { this.indicatorItem.cornerRadius = value }
+    fun setItemCornerRadius(@Px value: Float) = apply { this.indicatorItem.cornerRadius = value }
 
     /** sets the expanding and collapsing duration. */
     fun setItemDuration(value: Long) = apply { this.indicatorItem.duration = value }
 
     /** customizes the fully expanded height size. */
-    fun setExpandedSize(value: Int) = apply { this.indicatorItem.expandedSize = value }
+    fun setExpandedSize(@Px value: Int) = apply { this.indicatorItem.expandedSize = value }
 
     /** customizes the indicator animation when expanding and collapsing. */
     fun setIndicatorAnimation(value: IndicatorAnimation) = apply { this.indicatorItem.indicatorAnimation = value }

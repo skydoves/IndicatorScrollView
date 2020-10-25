@@ -21,6 +21,7 @@ import android.content.res.TypedArray
 import android.util.AttributeSet
 import android.widget.FrameLayout
 import androidx.annotation.FloatRange
+import androidx.annotation.Px
 
 /** IndicatorView is an indicator layout for reacting with [IndicatorScrollView] when the scroll is changed. */
 @Suppress("unused")
@@ -28,9 +29,13 @@ class IndicatorView : FrameLayout, OnScrollChangedListener {
 
   private val indicatorItemsList = mutableListOf<IndicatorItem>()
   private val indicatorItemViewList = mutableListOf<IndicatorItemView>()
+
+  @Px
   var indicatorItemPadding = dp2Px(6).toInt()
+
   @FloatRange(from = 0.0, to = 1.0)
   var expandingRatio = 0.2f
+
   @FloatRange(from = 0.0, to = 1.0)
   var expandingAllItemRatio = 0.9f
 
@@ -142,9 +147,12 @@ class IndicatorView : FrameLayout, OnScrollChangedListener {
   class Builder(context: Context) {
     private val indicatorView = IndicatorView(context)
 
-    fun setIndicatorItemPadding(value: Int) = apply { this.indicatorView.indicatorItemPadding = value }
+    fun setIndicatorItemPadding(@Px value: Int) = apply { this.indicatorView.indicatorItemPadding = value }
+
     fun setExpandingRatio(@FloatRange(from = 0.0, to = 1.0) value: Float) = apply { this.indicatorView.expandingRatio = value }
+
     fun setExpandingAllItemRatio(@FloatRange(from = 0.0, to = 1.0) value: Float) = apply { this.indicatorView.expandingAllItemRatio = value }
+
     fun build() = this.indicatorView
   }
 }

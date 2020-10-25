@@ -30,8 +30,12 @@ internal class IndicatorItemView(
   attrs: AttributeSet? = null
 ) : FrameLayout(context, attrs) {
 
-  private var isExpanding: Boolean = false
+  var isExpanding: Boolean = false
+    private set
+
   var isExpanded: Boolean = false
+    private set
+
   var indicatorItem: IndicatorItem? = null
     set(value) {
       field = value
@@ -51,17 +55,17 @@ internal class IndicatorItemView(
 
   private fun updateIndicatorItemView() {
     this.indicatorItem?.let {
-      val gradientDrawable = GradientDrawable()
-      gradientDrawable.cornerRadius = it.cornerRadius
-      gradientDrawable.setColor(it.color)
-      background = gradientDrawable
       icon.setImageDrawable(it.icon)
+      background = GradientDrawable().apply {
+        cornerRadius = it.cornerRadius
+        setColor(it.color)
+      }
     }
   }
 
   internal fun expand(minHeight: Int, to: Int) {
     this.indicatorItem?.let { item ->
-      if (!this.isExpanded && !isExpanding) {
+      if (!isExpanded && !isExpanding) {
         this.isExpanded = true
         this.isExpanding = true
         ValueAnimator.ofFloat(0f, 1f).apply {
@@ -84,7 +88,7 @@ internal class IndicatorItemView(
 
   internal fun collapse(minHeight: Int, from: Int) {
     this.indicatorItem?.let { item ->
-      if (this.isExpanded && !isExpanding) {
+      if (isExpanded && !isExpanding) {
         this.isExpanded = false
         this.isExpanding = true
         ValueAnimator.ofFloat(1f, 0f).apply {
