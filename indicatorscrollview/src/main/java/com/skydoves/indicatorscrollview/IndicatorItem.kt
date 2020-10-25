@@ -30,12 +30,25 @@ import androidx.core.content.ContextCompat
 class IndicatorItem(val target: View) {
 
   var color: Int = Color.WHITE
+    private set
+
   var icon: Drawable? = null
+    private set
+
   var iconTopPadding: Int = 50
+    private set
+
   var cornerRadius: Float = 120f
+    private set
+
   var duration: Long = 1000L
+    private set
+
   var expandedSize: Int = -1
+    private set
+
   var indicatorAnimation: IndicatorAnimation = IndicatorAnimation.NORMAL
+    private set
 
   /** Builder class for creating an instance of [IndicatorItem]. */
   @IndicatorItemDsl

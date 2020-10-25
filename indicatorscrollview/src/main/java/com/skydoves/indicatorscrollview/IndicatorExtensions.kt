@@ -23,10 +23,12 @@ import android.view.View
 
 /** creates an instance of [IndicatorItem] by [IndicatorItem.Builder] using kotlin dsl. */
 @JvmSynthetic
+@IndicatorItemDsl
 fun indicatorItem(target: View, block: IndicatorItem.Builder.() -> Unit): IndicatorItem =
   IndicatorItem.Builder(target).apply(block).build()
 
 /** creates an instance of [IndicatorView] by [IndicatorView.Builder] using kotlin dsl. */
 @JvmSynthetic
+@IndicatorViewDsl
 fun indicatorView(context: Context, block: IndicatorView.Builder.() -> Unit): IndicatorView =
   IndicatorView.Builder(context).apply(block).build()
