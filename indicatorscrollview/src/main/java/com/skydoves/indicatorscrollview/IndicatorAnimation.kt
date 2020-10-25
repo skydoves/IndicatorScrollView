@@ -17,7 +17,6 @@
 package com.skydoves.indicatorscrollview
 
 /** IndicatorAnimation is an animation attribute of [IndicatorView]'s the expanding and collapsing. */
-@Suppress("unused")
 enum class IndicatorAnimation(val value: Int) {
   NORMAL(0),
   ACCELERATE(1),

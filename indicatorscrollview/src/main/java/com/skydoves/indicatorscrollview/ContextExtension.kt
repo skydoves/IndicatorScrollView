@@ -18,13 +18,11 @@ package com.skydoves.indicatorscrollview
 
 import android.content.Context
 import android.graphics.Point
-import android.view.WindowManager
 
 /** gets display size as a point. */
 internal fun Context.displaySize(): Point {
-  val wm = getSystemService(Context.WINDOW_SERVICE) as WindowManager
-  val display = wm.defaultDisplay
-  val size = Point()
-  display.getSize(size)
-  return size
+  return Point(
+    resources.displayMetrics.widthPixels,
+    resources.displayMetrics.heightPixels
+  )
 }

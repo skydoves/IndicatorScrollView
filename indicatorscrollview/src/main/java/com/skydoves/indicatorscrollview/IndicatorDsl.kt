@@ -17,7 +17,7 @@
 package com.skydoves.indicatorscrollview
 
 @DslMarker
-annotation class IndicatorItemDsl
+internal annotation class IndicatorItemDsl
 
 @DslMarker
-annotation class IndicatorViewDsl
+internal annotation class IndicatorViewDsl
