@@ -17,20 +17,20 @@
 </p>
 
 ## Including in your project
-[![Download](https://api.bintray.com/packages/devmagician/maven/indicatorscrollview/images/download.svg) ](https://bintray.com/devmagician/maven/indicatorscrollview/_latestVersion)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.skydoves/indicatorscrollview.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.skydoves%22%20AND%20a:%22indicatorscrollview%22)
 [![JitPack](https://jitpack.io/v/skydoves/IndicatorScrollView.svg)](https://jitpack.io/#skydoves/IndicatorScrollView) <br>
 Add below codes to your **root** `build.gradle` file (not your module build.gradle file).
 ```gradle
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
     }
 }
 ```
 And add a dependency code to your **module**'s `build.gradle` file.
 ```gradle
 dependencies {
-    implementation "com.github.skydoves:indicatorscrollview:1.0.3"
+    implementation "com.github.skydoves:indicatorscrollview:1.0.4"
 }
 ```
 
