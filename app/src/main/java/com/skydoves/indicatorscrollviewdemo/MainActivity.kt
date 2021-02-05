@@ -19,30 +19,34 @@ package com.skydoves.indicatorscrollviewdemo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.skydoves.indicatorscrollview.IndicatorItem
-import kotlinx.android.synthetic.main.activity_main.*
+import com.skydoves.indicatorscrollviewdemo.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
 
-    indicatorScrollView.bindIndicatorView(indicatorView)
+    val binding = ActivityMainBinding.inflate(layoutInflater)
+    setContentView(binding.root)
 
-    indicatorView + IndicatorItem.Builder(section1).setItemColorResource(
-      R.color.colorPrimary
-    ).setItemIconResource(R.drawable.ic_heart).build()
+    with(binding) {
+      indicatorScrollView.bindIndicatorView(indicatorView)
 
-    indicatorView + IndicatorItem.Builder(section2).setItemColorResource(
-      R.color.md_yellow_200
-    ).setItemIconResource(R.drawable.ic_assignment).build()
+      indicatorView + IndicatorItem.Builder(section1).setItemColorResource(
+        R.color.colorPrimary
+      ).setItemIconResource(R.drawable.ic_heart).build()
 
-    indicatorView + IndicatorItem.Builder(section3).setItemColorResource(
-      R.color.md_green_200
-    ).setItemIconResource(R.drawable.ic_bookmark).build()
+      indicatorView + IndicatorItem.Builder(section2).setItemColorResource(
+        R.color.md_yellow_200
+      ).setItemIconResource(R.drawable.ic_assignment).build()
 
-    indicatorView + IndicatorItem.Builder(section4).setItemColorResource(
-      R.color.md_blue_200
-    ).setItemIconResource(R.drawable.ic_date).build()
+      indicatorView + IndicatorItem.Builder(section3).setItemColorResource(
+        R.color.md_green_200
+      ).setItemIconResource(R.drawable.ic_bookmark).build()
+
+      indicatorView + IndicatorItem.Builder(section4).setItemColorResource(
+        R.color.md_blue_200
+      ).setItemIconResource(R.drawable.ic_date).build()
+    }
   }
 }

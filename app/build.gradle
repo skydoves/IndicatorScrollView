@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply from: '../dependencies.gradle'
+apply from: "$rootDir/dependencies.gradle"
 
 android {
     compileSdkVersion versions.compileSdk
@@ -12,11 +11,18 @@ android {
         versionCode versions.versionCode
         versionName versions.versionName
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
     implementation "com.google.android.material:material:$versions.googleMaterial"
-    implementation project(':indicatorscrollview')
+    implementation "com.github.skydoves:indicatorscrollview:1.0.5-SNAPSHOT"
 }
 
-apply from: '../spotless.gradle'
+apply from: "$rootDir/spotless.gradle"

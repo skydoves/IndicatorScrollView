@@ -1,8 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'org.jetbrains.dokka-android'
+apply plugin: 'org.jetbrains.dokka'
 apply from: '../dependencies.gradle'
-apply from: '../publish.gradle'
 
 android {
     compileSdkVersion versions.compileSdk
@@ -12,17 +11,13 @@ android {
         versionCode versions.versionCode
         versionName versions.versionName
     }
+    buildFeatures {
+        buildConfig false
+    }
 }
 
 dependencies {
     implementation "androidx.appcompat:appcompat:$versions.androidxAppcompat"
-}
-
-dokka {
-    moduleName = 'indicatorscrollview'
-    outputFormat = 'html'
-    //noinspection GroovyAccessibility
-    outputDirectory = "$buildDir/javadoc"
 }
 
 tasks.withType(Javadoc) {
@@ -30,4 +25,5 @@ tasks.withType(Javadoc) {
     options.addBooleanOption('Xdoclint:none', true)
 }
 
+apply plugin: "com.vanniktech.maven.publish"
 apply from: '../spotless.gradle'
