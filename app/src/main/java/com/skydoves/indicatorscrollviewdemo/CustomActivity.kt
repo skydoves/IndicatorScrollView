@@ -21,60 +21,64 @@ import androidx.appcompat.app.AppCompatActivity
 import com.skydoves.indicatorscrollview.IndicatorAnimation
 import com.skydoves.indicatorscrollview.IndicatorItem
 import com.skydoves.indicatorscrollview.indicatorItem
-import kotlinx.android.synthetic.main.activity_custom.*
+import com.skydoves.indicatorscrollviewdemo.databinding.ActivityCustomBinding
 
 class CustomActivity : AppCompatActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_custom)
 
-    indicatorScrollView.bindIndicatorView(indicatorView)
+    val binding = ActivityCustomBinding.inflate(layoutInflater)
+    setContentView(binding.root)
 
-    /** add an indicator item using [indicatorItem] kotlin dsl with plus operator. */
-    indicatorView + indicatorItem(section1) {
-      setItemColorResource(R.color.colorPrimary)
-      setItemIconResource(R.drawable.ic_heart)
-      setIndicatorAnimation(IndicatorAnimation.BOUNCE)
-      setItemCornerRadius(30f)
-    }
+    with(binding) {
+      indicatorScrollView.bindIndicatorView(indicatorView)
 
-    /** add an indicator item using [IndicatorItem.Builder] with plus operator. */
-    indicatorView + IndicatorItem.Builder(section2)
-      .setItemColorResource(R.color.md_orange_100)
-      .setItemIconResource(R.drawable.ic_home)
-      .setIndicatorAnimation(IndicatorAnimation.BOUNCE)
-      .setItemCornerRadius(30f)
-      .build()
+      /** add an indicator item using [indicatorItem] kotlin dsl with plus operator. */
+      indicatorView + indicatorItem(section1) {
+        setItemColorResource(R.color.colorPrimary)
+        setItemIconResource(R.drawable.ic_heart)
+        setIndicatorAnimation(IndicatorAnimation.BOUNCE)
+        setItemCornerRadius(30f)
+      }
 
-    /** add an indicator item using an addIndicatorItem method. */
-    indicatorView.addIndicatorItem(
-      IndicatorItem.Builder(section3)
-        .setItemColorResource(R.color.md_yellow_200)
-        .setItemIconResource(R.drawable.ic_assignment)
+      /** add an indicator item using [IndicatorItem.Builder] with plus operator. */
+      indicatorView + IndicatorItem.Builder(section2)
+        .setItemColorResource(R.color.md_orange_100)
+        .setItemIconResource(R.drawable.ic_home)
         .setIndicatorAnimation(IndicatorAnimation.BOUNCE)
         .setItemCornerRadius(30f)
         .build()
-    )
 
-    indicatorView + IndicatorItem.Builder(section4)
-      .setItemColorResource(R.color.md_green_200)
-      .setItemIconResource(R.drawable.ic_bookmark)
-      .setIndicatorAnimation(IndicatorAnimation.BOUNCE)
-      .setItemCornerRadius(30f)
-      .build()
+      /** add an indicator item using an addIndicatorItem method. */
+      indicatorView.addIndicatorItem(
+        IndicatorItem.Builder(section3)
+          .setItemColorResource(R.color.md_yellow_200)
+          .setItemIconResource(R.drawable.ic_assignment)
+          .setIndicatorAnimation(IndicatorAnimation.BOUNCE)
+          .setItemCornerRadius(30f)
+          .build()
+      )
 
-    indicatorView + IndicatorItem.Builder(section5)
-      .setItemColorResource(R.color.md_blue_200)
-      .setItemIconResource(R.drawable.ic_date)
-      .setIndicatorAnimation(IndicatorAnimation.BOUNCE)
-      .setItemCornerRadius(30f)
-      .build()
+      indicatorView + IndicatorItem.Builder(section4)
+        .setItemColorResource(R.color.md_green_200)
+        .setItemIconResource(R.drawable.ic_bookmark)
+        .setIndicatorAnimation(IndicatorAnimation.BOUNCE)
+        .setItemCornerRadius(30f)
+        .build()
 
-    indicatorView + IndicatorItem.Builder(section6)
-      .setItemColorResource(R.color.md_purple_100)
-      .setItemIconResource(R.drawable.ic_wifi)
-      .setIndicatorAnimation(IndicatorAnimation.BOUNCE)
-      .setItemCornerRadius(30f).build()
+      indicatorView + IndicatorItem.Builder(section5)
+        .setItemColorResource(R.color.md_blue_200)
+        .setItemIconResource(R.drawable.ic_date)
+        .setIndicatorAnimation(IndicatorAnimation.BOUNCE)
+        .setItemCornerRadius(30f)
+        .build()
+
+      indicatorView + IndicatorItem.Builder(section6)
+        .setItemColorResource(R.color.md_purple_100)
+        .setItemIconResource(R.drawable.ic_wifi)
+        .setIndicatorAnimation(IndicatorAnimation.BOUNCE)
+        .setItemCornerRadius(30f).build()
+    }
   }
 }
